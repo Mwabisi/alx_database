@@ -1,2 +1,7 @@
---lists all the tables of a database in your MySQL server
-SHOW TABLES hbtn_0c_0;
+-- Get the database name from the command line argument
+SET @db_name = '$1';
+
+-- Get a list of all the tables in the database
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = @db_name;
