@@ -4,6 +4,7 @@ SET @db_name = '$1';
 -- Get the table name
 SET @table_name = 'first_table';
 
--- Insert a new row
-INSERT INTO `first_table` (`id`, `name`)
-VALUES (89, 'Holberton School');
+-- Get the number of records with id = 89
+SELECT COUNT(*)
+FROM `first_table`
+WHERE id = 89;
