@@ -1,12 +1,12 @@
 -- Connect to MySQL and select the desired database (replace 'your_database_name' with the actual database name)
 USE your_database_name;
 
--- List all the cities of California
-SELECT cities.id, cities.name
+-- List all the cities in California
+SELECT id, name
 FROM cities
-WHERE cities.state_id = (
-  SELECT states.id
+WHERE state_id = (
+  SELECT id
   FROM states
-  WHERE states.name = 'California'
+  WHERE name = 'California'
 )
-ORDER BY cities.id ASC;
+ORDER BY id ASC;
