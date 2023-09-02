@@ -1,5 +1,5 @@
 -- Connect to MySQL and select the desired database (replace 'your_database_name' with the actual database name)
-USE your_database_name;
+USEhbtn_0d_usa;
 
 -- List all the cities in California
 SELECT id, name
