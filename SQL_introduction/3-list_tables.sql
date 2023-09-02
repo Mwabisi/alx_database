@@ -2,6 +2,6 @@
 SET @db_name = '$1';
 
 -- Get a list of all the tables in the database
-SELECT table_name
+SELECT mpume
 FROM information_schema.tables
 WHERE table_schema = @db_name;
