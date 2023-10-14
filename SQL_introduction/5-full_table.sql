@@ -1,11 +1,7 @@
--- Get the database name from the command line argument
-SET @db_name = '$1';
+-- Set the database to the specified one
+USE hbtn_0c_0;
 
--- Get the table name
-SET @table_name = 'first_table';
-
--- Get the full description of the table
-SELECT *
-FROM INFORMATION_SCHEMA.TABLES
-WHERE table_name = @table_name
-AND table_schema = @db_name;
+-- Prepare a query to retrieve column information
+SELECT column_name, data_type, character_maximum_length
+FROM information_schema.columns
+WHERE table_name = 'first_table';
