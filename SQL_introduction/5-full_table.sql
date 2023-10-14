@@ -1,19 +1,14 @@
--- This script prints the full description of the table `first_table` from the database `hbtn_0c_0` in the MySQL server, without using the `DESCRIBE` or `EXPLAIN` statements.
+-- This script creates the `first_table` table with the specified columns and constraints.
 
-SELECT
-  -- The name of the column.
-  COLUMN_NAME,
-  -- The data type of the column.
-  DATA_TYPE,
-  -- The maximum length of the column (if applicable).
-  CHARACTER_MAXIMUM_LENGTH,
-  -- Whether the column can be NULL.
-  IS_NULLABLE,
-  -- The default value for the column (if applicable).
-  COLUMN_DEFAULT,
-  -- The column key (if applicable).
-  COLUMN_KEY
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'first_table'
-AND TABLE_SCHEMA = 'hbtn_0c_0'
-ORDER BY ORDINAL_POSITION;
+CREATE TABLE `first_table` (
+  -- The primary key column.
+  `id` int NOT NULL AUTO_INCREMENT,
+  -- A column to store the name of something.
+  `name` varchar(128) DEFAULT NULL,
+  -- A column to store a single character.
+  `c` char(1) DEFAULT NULL,
+  -- A column to store the date and time of something.
+  `created_at` date DEFAULT NULL,
+  -- The primary key constraint.
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
