@@ -1,2 +1,2 @@
-/* This code lists all the databases in the current MySQL server. */
-SHOW DATABASES;
+-- List all databases on the MySQL server
+SELECT DATABASE();
