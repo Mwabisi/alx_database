@@ -7,5 +7,5 @@ IF (SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'first_tab
     '`c`char(1)DEFAULTNULL,' ||
     '`created_at`dateDEFAULTNULL,' ||
     'PRIMARYKEY(`id`)' ||
-    ')ENGINE=InnoDBDEFAULTCHARSET=utf8mb4COLLATE=utf8mb4_0900_ai_ci' AS expected_output;
+    ')ENGINE=InnoDBDFAULTCHARSET=utf8mb4COLLATE=utf8mb4_0900_ai_ci' AS expected_output;
 END IF;
