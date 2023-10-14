@@ -1,14 +1,19 @@
--- Set the database to the specified one
-USE hbtn_0c_0;
+-- This script prints the full description of the table `first_table` from the database `hbtn_0c_0` in the MySQL server, without using the `DESCRIBE` or `EXPLAIN` statements.
 
--- Prepare a query to retrieve and format the table description
-SELECT 'first_table' AS first_table,
-    CONCAT(
-        'CREATE TABLE `first_table` (',
-        '`id` int NOT NULL AUTO_INCREMENT,',
-        '`name` varchar(128) DEFAULT NULL,',
-        '`c` char(1) DEFAULT NULL,',
-        '`created_at` date DEFAULT NULL,',
-        'PRIMARY KEY (`id`)',
-        ') ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
-    ) AS description;
+SELECT
+  -- The name of the column.
+  COLUMN_NAME,
+  -- The data type of the column.
+  DATA_TYPE,
+  -- The maximum length of the column (if applicable).
+  CHARACTER_MAXIMUM_LENGTH,
+  -- Whether the column can be NULL.
+  IS_NULLABLE,
+  -- The default value for the column (if applicable).
+  COLUMN_DEFAULT,
+  -- The column key (if applicable).
+  COLUMN_KEY
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'first_table'
+AND TABLE_SCHEMA = 'hbtn_0c_0'
+ORDER BY ORDINAL_POSITION;
